@@ -17,8 +17,4 @@ Number
 */
 
 
-public class Solution {
-    public int nthUglyNumber(int n) {
-        
-    }
-}
+public class Solution {    public int nthUglyNumber(int n) {        int[] res = new int[n];        res[0] = 1;        int i = 0, p2 = i, p3 = i, p5 = i;        int num2 = 2, num3 = 3, num5 = 5;        while(i < n-1){            int next = Math.min(Math.min(num2,num3),num5);            res[++i] = next;            if(next == num2) num2 = 2 * res[++p2];            if(next == num3) num3 = 3 * res[++p3];            if(next == num5) num5 = 5 * res[++p5];        }        return res[n-1];    }}

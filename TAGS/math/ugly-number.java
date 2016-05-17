@@ -10,8 +10,4 @@ Number II
 */
 
 
-public class Solution {
-    public boolean isUgly(int num) {
-        
-    }
-}
+public class Solution {    public boolean isUgly(int num) {        if(num==0) return false;        int i = 6;        while(i>1){            while(num % i == 0)num /= i;            i--;        }        return num==1;    }}
