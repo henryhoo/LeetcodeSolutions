@@ -1,0 +1,62 @@
+******************************range-sum-query-mutable
+ Given an integer array nums , find the sum of the elements between indices i
+and j ( i &le; j ), inclusive. The update(i, val) function modifies nums by
+updating the element at index i to val . Example:  Given nums = [1, 3, 5]
+sumRange(0, 2) -> 9
+update(1, 2)
+sumRange(0, 2) -> 8   Note:   The array is only modifiable by the update
+function.  You may assume the number of calls to update and sumRange function is
+distributed evenly.     Subscribe to see which companies asked this question
+Show Tags   Segment Tree  Binary Indexed Tree     Show Similar Problems   (E)
+Range Sum Query - Immutable  (H) Range Sum Query 2D - Mutable
+
+******************************the-skyline-problem
+ A city's skyline is the outer contour of the silhouette formed by all the
+buildings in that city when viewed from a distance. Now suppose you are given
+the locations and height of all the buildings as shown on a cityscape photo
+(Figure A), write a program to output the skyline formed by these buildings
+collectively (Figure B).  Cityscape     Use this image for the 'turning point'
+description of skyline     Use the following image if we'd like to define the
+output as 'horizontal lines' rather than 'turning points'  <a
+href="http://tinypic.com?ref=mij3wi" target="_blank">
+<img style="max-width: 45%;" src="http://i59.tinypic.com/mij3wi.jpg" border="0"
+alt="Skyline Contour">
+</a>  The geometric information of each building is represented by a triplet of
+integers [Li, Ri, Hi] , where Li and Ri are the x coordinates of the left and
+right edge of the ith building, respectively, and Hi is its height. It is
+guaranteed that 0 ≤ Li, Ri ≤ INT_MAX , 0 < Hi ≤ INT_MAX , and Ri - Li > 0 . You
+may assume all buildings are perfect rectangles grounded on an absolutely flat
+surface at height 0.  For instance, the dimensions of all buildings in Figure A
+are recorded as: [ [2 9 10], [3 7 15], [5 12 12], [15 20 10], [19 24 8] ] .  The
+output is a list of " key points " (red dots in Figure B) in the format of [
+[x1,y1], [x2, y2], [x3, y3], ... ] that uniquely defines a skyline. A key point
+is the left endpoint of a horizontal line segment . Note that the last key
+point, where the rightmost building ends, is merely used to mark the termination
+of the skyline, and always has zero height. Also, the ground in between any two
+adjacent buildings should be considered part of the skyline contour. For
+instance, the skyline in Figure B should be represented as: [ [2 10], [3 15], [7
+12], [12 0], [15 10], [20 8], [24, 0] ] .  Notes:   The number of buildings in
+any input list is guaranteed to be in the range [0, 10000] .  The input list is
+already sorted in ascending order by the left x position Li .  The output list
+must be sorted by the x position.  There must be no consecutive horizontal lines
+of equal height in the output skyline. For instance, [...[2 3], [4 5], [7 5],
+[11 5], [12 7]...] is not acceptable; the three lines of height 5 should be
+merged into one in the final output as such: [...[2 3], [4 5], [12 7], ...]
+Credits: Special thanks to @stellari for adding this problem, creating these two
+awesome images and all test cases.   Subscribe to see which companies asked this
+question    Show Tags   Binary Indexed Tree  Segment Tree  Heap  Divide and
+Conquer
+
+******************************count-of-smaller-numbers-after-self
+ You are given an integer array nums and you have to return a new counts array.
+The counts array has the property where counts[i] is
+the number of smaller elements to the right of nums[i] .  Example:  Given nums =
+[5, 2, 6, 1]
+To the right of 5 there are 2 smaller elements (2 and 1).
+To the right of 2 there is only 1 smaller element (1).
+To the right of 6 there is 1 smaller element (1).
+To the right of 1 there is 0 smaller element.  Return the array [2, 1, 1, 0] .
+Subscribe to see which companies asked this question    Show Tags   Divide and
+Conquer  Binary Indexed Tree  Segment Tree  Binary Search Tree     Show Similar
+Problems   (H) Count of Range Sum
+
