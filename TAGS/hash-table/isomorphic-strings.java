@@ -10,9 +10,17 @@ asked this question    Show Tags   Hash Table     Show Similar Problems   (E)
 Word Pattern
 */
 
-
-public class Solution {
-    public boolean isIsomorphic(String s, String t) {
-        
-    }
+public class Solution {
+    public boolean isIsomorphic(String s, String t) {
+        int len = s.length();
+        int[] spos = new int[256], tpos = new int[256];
+        for(int i = 0; i < len; i++){
+            int ss = s.charAt(i), tt = t.charAt(i);
+            if(spos[ss] != tpos[tt])return false;
+            //i+1, incase duplication of pos 0
+            spos[ss] = i+1;
+            tpos[tt] = i+1;
+        }
+        return true;
+    }
 }
