@@ -22,8 +22,4 @@ Stack
 */
 
 
-public class Solution {
-    public boolean isValidSerialization(String preorder) {
-        
-    }
-}
+public class Solution {    public boolean isValidSerialization(String preorder) {        String[] split = preorder.split(",");        if(split.length>1&&split[0].equals("#"))return false;        int leafedge = 1;        for(String s : split){            if(!s.equals("#")) leafedge++;            else leafedge--;            if(leafedge < 0) return false;            if(leafedge == 0) return leafedge==0 && s==split[split.length-1];        }        return leafedge==0;    }}
