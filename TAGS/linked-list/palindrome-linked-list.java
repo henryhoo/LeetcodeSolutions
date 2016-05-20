@@ -18,7 +18,7 @@ public class Solution {
     public boolean isPalindrome(ListNode head) {
         if(head==null||head.next==null)return true;
         ListNode fast = head, slow = head, mid = slow.next, prev = null;
-        //find out the mid point and reverse the 1st part. 
+        //find out the mid point and reverse the 1st part.
         while(fast.next != null&&fast.next.next!=null){
             fast=fast.next.next;
             prev=slow;
@@ -30,11 +30,33 @@ public class Solution {
         if(fast.next==null){
             slow=slow.next;
         }
-        //check 1st and 2nd part to see if Palindrome 
+        //check 1st and 2nd part to see if Palindrome
         while(mid!=null){
             if(mid.val!=slow.val)return false;
             mid=mid.next;
             slow=slow.next;
+        }
+        return true;
+    }
+}
+
+//2ND TIME Solutionpublic class Solution {
+    public boolean isPalindrome(ListNode head) {
+        if(head==null||head.next==null)return true;
+        ListNode fast = head, slow = head, pre = null, temp = null;
+        while(fast!=null && fast.next!=null){
+            fast = fast.next.next;
+            temp = slow.next;
+            slow.next = pre;
+            pre = slow;
+            slow = temp;
+        }
+        slow = pre;
+        temp = fast==null?temp:temp.next;
+        while(temp!=null){
+            if(temp.val!=slow.val)return false;
+            temp = temp.next;
+            slow = slow.next;
         }
         return true;
     }
