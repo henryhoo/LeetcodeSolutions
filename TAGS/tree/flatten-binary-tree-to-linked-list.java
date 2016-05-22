@@ -29,9 +29,5 @@ first Search
  *     TreeNode right;
  *     TreeNode(int x) { val = x; }
  * }
- */
-public class Solution {
-    public void flatten(TreeNode root) {
-        
-    }
-}
+ *///my first solution 34%
+ public class Solution {     public void flatten(TreeNode root) {         root = flat(root);     }     private TreeNode flat(TreeNode root){         if(root == null) return null;         TreeNode temp = root.right;         root.right = flat(root.left);         root.left = null;         TreeNode temp2 = root;         while(temp2.right != null){             temp2 = temp2.right;         }         temp2.right = flat(temp);         return root;     } }
