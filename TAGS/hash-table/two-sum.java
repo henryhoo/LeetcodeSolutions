@@ -10,9 +10,14 @@ Table     Show Similar Problems   (M) 3Sum  (M) 4Sum  (M) Two Sum II - Input
 array is sorted  (E) Two Sum III - Data structure design
 */
 
-
-public class Solution {
-    public int[] twoSum(int[] nums, int target) {
-        
-    }
+public class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer,Integer> map = new HashMap<>();
+        for(int i = 0; i < nums.length; i++){
+            if(map.containsKey(target-nums[i]))
+                return new int[]{i,map.get(target-nums[i])};
+            map.put(nums[i],i);
+        }
+        return null;
+    }
 }
