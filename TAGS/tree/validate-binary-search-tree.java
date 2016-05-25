@@ -27,9 +27,5 @@ Show Similar Problems   (M) Binary Tree Inorder Traversal
  *     TreeNode right;
  *     TreeNode(int x) { val = x; }
  * }
- */
-public class Solution {
-    public boolean isValidBST(TreeNode root) {
-        
-    }
-}
+ *///top-down recursion
+ public class Solution {     public boolean isValidBST(TreeNode root) {         return valid(root, (long)(Integer.MIN_VALUE)-1, (long)(Integer.MAX_VALUE)+1);     }     private boolean valid(TreeNode root, long min, long max) {         if (root == null) return true;         return (long)root.val > min && (long)root.val < max           && valid(root.right, root.val, max)           && valid(root.left, min, root.val);     } }//inoder traversalpublic class Solution {    long pre = (long)Integer.MIN_VALUE - 1;    public boolean isValidBST(TreeNode root) {        return valid(root);    }    private boolean valid(TreeNode root) {        if (root != null) {            if (valid(root.left)) {                if(root.val > pre) {                    pre = root.val;                    return valid(root.right);                }            }            return false;        }        return true;    }}
