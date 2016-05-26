@@ -13,8 +13,4 @@ Factor Combinations
 */
 
 
-public class Solution {
-    public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        
-    }
-}
+public class Solution {    List<List<Integer>> ans = new ArrayList<List<Integer>>();    int[] cans;    int len;    public List<List<Integer>> combinationSum(int[] candidates, int target) {        cans = candidates.clone();        len = candidates.length;        Arrays.sort(cans);        sum(0, target, new ArrayList<Integer>());        return ans;    }    private void sum(int start, int target, List<Integer> cur) {        if (target == 0) {            //add this result            ans.add(new ArrayList<>(cur));        } else {            for(int i = start; i < len && cans[i] <= target; i++) {//cut the branches                cur.add(cans[i]);                sum(i, target - cans[i], cur);//recursive adding the branch                cur.remove(cur.size()-1);            }        }    }}
