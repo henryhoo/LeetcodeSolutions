@@ -9,9 +9,5 @@ Subscribe to see which companies asked this question    Show Tags   Array
 Backtracking     Show Similar Problems   (M) Combination Sum
 */
 
-
-public class Solution {
-    public List<List<Integer>> combinationSum3(int k, int n) {
-        
-    }
-}
+//my first solution
+public class Solution {    List<List<Integer>> ans = new ArrayList<List<Integer>>();    public List<List<Integer>> combinationSum3(int k, int n) {        sum(k, n, new ArrayList<Integer>());        return ans;    }    private void sum(int k, int n, ArrayList<Integer> comb) {        int cur = comb.size() > 0 ? comb.get(comb.size() - 1) : 0;        //System.out.print("|"+k+n+comb+"|");        if (cur > 9 || k < 0) {            return;        }        if (k == 0 && n == 0) {            ans.add(new ArrayList<Integer>(comb));        }        else if (n - cur > 0) {            for (int i = cur + 1; i <= 9 && n - i >= 0; i++) {                comb.add(i);                sum(k - 1, n - i, comb);                comb.remove(comb.size() - 1);            }        }    }}
