@@ -1,0 +1,286 @@
+******************************maximum-depth-of-binary-tree
+ Given a binary tree, find its maximum depth.  The maximum depth is the number
+of nodes along the longest path from the root node down to the farthest leaf
+node.   Subscribe to see which companies asked this question    Show Tags   Tree
+Depth-first Search     Show Similar Problems   (E) Balanced Binary Tree  (E)
+Minimum Depth of Binary Tree
+
+******************************construct-binary-tree-from-preorder-and-inorder-traversal
+ Given preorder and inorder traversal of a tree, construct the binary tree.
+Note: You may assume that duplicates do not exist in the tree.   Subscribe to
+see which companies asked this question    Show Tags   Tree  Array  Depth-first
+Search     Show Similar Problems   (M) Construct Binary Tree from Inorder and
+Postorder Traversal
+
+******************************flatten-binary-tree-to-linked-list
+ Given a binary tree, flatten it to a linked list in-place.  For example, Given
+1
+/ \
+2   5
+/ \   \
+3   4   6  The flattened tree should look like:  1
+\
+2
+\
+3
+\
+4
+\
+5
+\
+6  click to show hints.  Hints:  If you notice carefully in the flattened tree,
+each node's right child points to the next node of a pre-order traversal.
+Subscribe to see which companies asked this question    Show Tags   Tree  Depth-
+first Search
+
+******************************path-sum
+ Given a binary tree and a sum, determine if the tree has a root-to-leaf path
+such that adding up all the values along the path equals the given sum. For
+example: Given the below binary tree and sum = 22 , 5
+/ \
+4   8
+/   / \
+11  13  4
+/  \      \
+7    2      1  return true, as there exist a root-to-leaf path 5->4->11->2 which
+sum is 22.   Subscribe to see which companies asked this question    Show Tags
+Tree  Depth-first Search     Show Similar Problems   (M) Path Sum II  (H) Binary
+Tree Maximum Path Sum  (M) Sum Root to Leaf Numbers
+
+******************************path-sum-ii
+ Given a binary tree and a sum, find all root-to-leaf paths where each path's
+sum equals the given sum. For example: Given the below binary tree and sum = 22
+, 5
+/ \
+4   8
+/   / \
+11  13  4
+/  \    / \
+7    2  5   1  return  [
+[5,4,11,2],
+[5,8,4,5]
+]    Subscribe to see which companies asked this question    Show Tags   Tree
+Depth-first Search     Show Similar Problems   (E) Path Sum  (E) Binary Tree
+Paths
+
+******************************same-tree
+ Given two binary trees, write a function to check if they are equal or not.
+Two binary trees are considered equal if they are structurally identical and the
+nodes have the same value.   Subscribe to see which companies asked this
+question    Show Tags   Tree  Depth-first Search
+
+******************************recover-binary-search-tree
+ Two elements of a binary search tree (BST) are swapped by mistake.  Recover the
+tree without changing its structure.  Note: A solution using O( n ) space is
+pretty straight forward. Could you devise a constant space solution?  confused
+what "{1,#,2,3}" means? > read more on how binary tree is serialized on OJ.
+OJ's Binary Tree Serialization:  The serialization of a binary tree follows a
+level order traversal, where '#' signifies a path terminator where no node
+exists below.  Here's an example:  1
+/ \
+2   3
+/
+4
+\
+5 The above binary tree is serialized as "{1,2,3,#,#,4,#,#,5}" .    Subscribe to
+see which companies asked this question    Show Tags   Tree  Depth-first Search
+
+******************************minimum-depth-of-binary-tree
+ Given a binary tree, find its minimum depth.  The minimum depth is the number
+of nodes along the shortest path from the root node down to the nearest leaf
+node.   Subscribe to see which companies asked this question    Show Tags   Tree
+Depth-first Search  Breadth-first Search     Show Similar Problems   (E) Binary
+Tree Level Order Traversal  (E) Maximum Depth of Binary Tree
+
+******************************reconstruct-itinerary
+ Given a list of airline tickets represented by pairs of departure and arrival
+airports [from, to] , reconstruct the itinerary in order. All of the tickets
+belong to a man who departs from JFK . Thus, the itinerary must begin with JFK .
+Note:   If there are multiple valid itineraries, you should return the itinerary
+that has the smallest lexical order when read as a single string. For example,
+the itinerary ["JFK", "LGA"] has a smaller lexical order than ["JFK", "LGB"] .
+All airports are represented by three capital letters (IATA code).  You may
+assume all tickets form at least one valid itinerary.     Example 1:  tickets =
+[["MUC", "LHR"], ["JFK", "MUC"], ["SFO", "SJC"], ["LHR", "SFO"]] Return ["JFK",
+"MUC", "LHR", "SFO", "SJC"] .    Example 2:  tickets =
+[["JFK","SFO"],["JFK","ATL"],["SFO","ATL"],["ATL","JFK"],["ATL","SFO"]] Return
+["JFK","ATL","JFK","SFO","ATL","SFO"] . Another possible reconstruction is
+["JFK","SFO","ATL","JFK","ATL","SFO"] . But it is larger in lexical order.
+Credits: Special thanks to @dietpepsi for adding this problem and creating all
+test cases.   Subscribe to see which companies asked this question    Show Tags
+Depth-first Search  Graph
+
+******************************sum-root-to-leaf-numbers
+ Given a binary tree containing digits from 0-9 only, each root-to-leaf path
+could represent a number.  An example is the root-to-leaf path 1->2->3 which
+represents the number 123 .  Find the total sum of all root-to-leaf numbers.
+For example, 1
+/ \
+2   3   The root-to-leaf path 1->2 represents the number 12 . The root-to-leaf
+path 1->3 represents the number 13 .  Return the sum = 12 + 13 = 25 .
+Subscribe to see which companies asked this question    Show Tags   Tree  Depth-
+first Search     Show Similar Problems   (E) Path Sum  (H) Binary Tree Maximum
+Path Sum
+
+******************************longest-increasing-path-in-a-matrix
+ Given an integer matrix, find the length of the longest increasing path.  From
+each cell, you can either move to four directions: left, right, up or down. You
+may NOT move diagonally or move outside of the boundary (i.e. wrap-around is not
+allowed).   Example 1:  nums = [
+[ 9 ,9,4],
+[ 6 ,6,8],
+[ 2 , 1 ,1]
+]   Return 4 The longest increasing path is [1, 2, 6, 9] .   Example 2:  nums =
+[
+[ 3 , 4 , 5 ],
+[3,2, 6 ],
+[2,2,1]
+]   Return 4 The longest increasing path is [3, 4, 5, 6] . Moving diagonally is
+not allowed.  Credits: Special thanks to @dietpepsi for adding this problem and
+creating all test cases.   Subscribe to see which companies asked this question
+Show Tags   Depth-first Search  Topological Sort  Memoization
+
+******************************binary-tree-paths
+ Given a binary tree, return all root-to-leaf paths.  For example, given the
+following binary tree:   1
+/   \
+2     3
+\
+5   All root-to-leaf paths are: ["1->2->5", "1->3"]   Credits: Special thanks to
+@jianchao.li.fighter for adding this problem and creating all test cases.
+Subscribe to see which companies asked this question    Show Tags   Tree  Depth-
+first Search     Show Similar Problems   (M) Path Sum II
+
+******************************house-robber-iii
+ The thief has found himself a new place for his thievery again. There is only
+one entrance to this area, called the "root." Besides the root, each house has
+one and only one parent house. After a tour, the smart thief realized that "all
+houses in this place forms a binary tree". It will automatically contact the
+police if two directly-linked houses were broken into on the same night.
+Determine the maximum amount of money the thief can rob tonight without alerting
+the police.  Example 1:   3 / \
+2   3
+\   \ 3   1  Maximum amount of money the thief can rob = 3 + 3 + 1 = 7 .
+Example 2:  3
+/ \ 4  5 / \   \
+1   3   1 Maximum amount of money the thief can rob = 4 + 5 = 9 .  Credits:
+Special thanks to @dietpepsi for adding this problem and creating all test
+cases.   Subscribe to see which companies asked this question    Show Tags
+Tree  Depth-first Search     Show Similar Problems   (E) House Robber  (M) House
+Robber II
+
+******************************number-of-islands
+ Given a 2d grid map of '1' s (land) and '0' s (water), count the number of
+islands. An island is surrounded by water and is formed by connecting adjacent
+lands horizontally or vertically. You may assume all four edges of the grid are
+all surrounded by water.  Example 1:  11110 11010 11000 00000  Answer: 1
+Example 2:  11000 11000 00100 00011  Answer: 3  Credits: Special thanks to
+@mithmatt for adding this problem and creating all test cases.   Subscribe to
+see which companies asked this question    Show Tags   Depth-first Search
+Breadth-first Search  Union Find     Show Similar Problems   (M) Surrounded
+Regions  (M) Walls and Gates  (H) Number of Islands II  (M) Number of Connected
+Components in an Undirected Graph
+
+******************************course-schedule-ii
+ There are a total of n courses you have to take, labeled from 0 to n - 1 .
+Some courses may have prerequisites, for example to take course 0 you have to
+first take course 1, which is expressed as a pair: [0,1]  Given the total number
+of courses and a list of prerequisite pairs , return the ordering of courses you
+should take to finish all courses.  There may be multiple correct orders, you
+just need to return one of them. If it is impossible to finish all courses,
+return an empty array.  For example:  2, [[1,0]]  There are a total of 2 courses
+to take. To take course 1 you should have finished course 0. So the correct
+course order is [0,1]  4, [[1,0],[2,0],[3,1],[3,2]]  There are a total of 4
+courses to take. To take course 3 you should have finished both courses 1 and 2.
+Both courses 1 and 2 should be taken after you finished course 0. So one correct
+course order is [0,1,2,3] . Another correct ordering is [0,2,1,3] .  Note: The
+input prerequisites is a graph represented by a list of edges , not adjacency
+matrices. Read more about how a graph is represented .  click to show more
+hints.  Hints:   This problem is equivalent to finding the topological order in
+a directed graph. If a cycle exists, no topological ordering exists and
+therefore it will be impossible to take all courses.  Topological Sort via DFS -
+A great video tutorial (21 minutes) on Coursera explaining the basic concepts of
+Topological Sort.  Topological sort could also be done via BFS .     Subscribe
+to see which companies asked this question    Show Tags   Depth-first Search
+Breadth-first Search  Graph  Topological Sort     Show Similar Problems   (M)
+Course Schedule  (H) Alien Dictionary  (M) Minimum Height Trees
+
+******************************populating-next-right-pointers-in-each-node-ii
+ Follow up for problem " Populating Next Right Pointers in Each Node ".  What if
+the given tree could be any binary tree? Would your previous solution still
+work?   Note:  You may only use constant extra space.   For example, Given the
+following binary tree,  1
+/  \
+2    3
+/ \    \
+4   5    7   After calling your function, the tree should look like:  1 -> NULL
+/  \
+2 -> 3 -> NULL
+/ \    \
+4-> 5 -> 7 -> NULL    Subscribe to see which companies asked this question
+Show Tags   Tree  Depth-first Search     Show Similar Problems   (M) Populating
+Next Right Pointers in Each Node
+
+******************************construct-binary-tree-from-inorder-and-postorder-traversal
+ Given inorder and postorder traversal of a tree, construct the binary tree.
+Note: You may assume that duplicates do not exist in the tree.   Subscribe to
+see which companies asked this question    Show Tags   Tree  Array  Depth-first
+Search     Show Similar Problems   (M) Construct Binary Tree from Preorder and
+Inorder Traversal
+
+******************************convert-sorted-list-to-binary-search-tree
+ Given a singly linked list where elements are sorted in ascending order,
+convert it to a height balanced BST.   Subscribe to see which companies asked
+this question    Show Tags   Depth-first Search  Linked List     Show Similar
+Problems   (M) Convert Sorted Array to Binary Search Tree
+
+******************************binary-tree-maximum-path-sum
+ Given a binary tree, find the maximum path sum.  For this problem, a path is
+defined as any sequence of nodes from some starting node to any node in the tree
+along the parent-child connections. The path does not need to go through the
+root.  For example: Given the below binary tree, 1
+/ \
+2   3   Return 6 .   Subscribe to see which companies asked this question
+Show Tags   Tree  Depth-first Search     Show Similar Problems   (E) Path Sum
+(M) Sum Root to Leaf Numbers
+
+******************************course-schedule
+ There are a total of n courses you have to take, labeled from 0 to n - 1 .
+Some courses may have prerequisites, for example to take course 0 you have to
+first take course 1, which is expressed as a pair: [0,1]  Given the total number
+of courses and a list of prerequisite pairs , is it possible for you to finish
+all courses?  For example:  2, [[1,0]]  There are a total of 2 courses to take.
+To take course 1 you should have finished course 0. So it is possible.  2,
+[[1,0],[0,1]]  There are a total of 2 courses to take. To take course 1 you
+should have finished course 0, and to take course 0 you should also have
+finished course 1. So it is impossible.  Note: The input prerequisites is a
+graph represented by a list of edges , not adjacency matrices. Read more about
+how a graph is represented .  click to show more hints.  Hints:   This problem
+is equivalent to finding if a cycle exists in a directed graph. If a cycle
+exists, no topological ordering exists and therefore it will be impossible to
+take all courses.  Topological Sort via DFS - A great video tutorial (21
+minutes) on Coursera explaining the basic concepts of Topological Sort.
+Topological sort could also be done via BFS .     Subscribe to see which
+companies asked this question    Show Tags   Depth-first Search  Breadth-first
+Search  Graph  Topological Sort     Show Similar Problems   (M) Course Schedule
+II  (M) Graph Valid Tree  (M) Minimum Height Trees
+
+******************************validate-binary-search-tree
+ Given a binary tree, determine if it is a valid binary search tree (BST).
+Assume a BST is defined as follows:  The left subtree of a node contains only
+nodes with keys less than the node's key.  The right subtree of a node contains
+only nodes with keys greater than the node's key.  Both the left and right
+subtrees must also be binary search trees.    confused what "{1,#,2,3}" means? >
+read more on how binary tree is serialized on OJ.  OJ's Binary Tree
+Serialization:  The serialization of a binary tree follows a level order
+traversal, where '#' signifies a path terminator where no node exists below.
+Here's an example:  1
+/ \
+2   3
+/
+4
+\
+5 The above binary tree is serialized as "{1,2,3,#,#,4,#,#,5}" .    Subscribe to
+see which companies asked this question    Show Tags   Tree  Depth-first Search
+Show Similar Problems   (M) Binary Tree Inorder Traversal
+

@@ -1,0 +1,273 @@
+******************************remove-invalid-parentheses
+ Remove the minimum number of invalid parentheses in order to make the input
+string valid. Return all possible results.  Note: The input string may contain
+letters other than the parentheses ( and ) .   Examples:  "()())()" ->
+["()()()", "(())()"]
+"(a)())()" -> ["(a)()()", "(a())()"]
+")(" -> [""]   Credits: Special thanks to @hpplayer for adding this problem and
+creating all test cases.   Subscribe to see which companies asked this question
+Show Tags   Depth-first Search  Breadth-first Search     Show Similar Problems
+(E) Valid Parentheses
+
+******************************symmetric-tree
+ Given a binary tree, check whether it is a mirror of itself (ie, symmetric
+around its center).  For example, this binary tree is symmetric: 1
+/ \
+2   2
+/ \ / \
+3  4 4  3   But the following is not:  1
+/ \
+2   2
+\   \
+3    3    Note: Bonus points if you could solve it both recursively and
+iteratively.  confused what "{1,#,2,3}" means? > read more on how binary tree is
+serialized on OJ.  OJ's Binary Tree Serialization:  The serialization of a
+binary tree follows a level order traversal, where '#' signifies a path
+terminator where no node exists below.  Here's an example:  1
+/ \
+2   3
+/
+4
+\
+5 The above binary tree is serialized as "{1,2,3,#,#,4,#,#,5}" .    Subscribe to
+see which companies asked this question    Show Tags   Tree  Depth-first Search
+Breadth-first Search
+
+******************************binary-tree-level-order-traversal
+ Given a binary tree, return the level order traversal of its nodes' values.
+(ie, from left to right, level by level).  For example: Given binary tree
+{3,9,20,#,#,15,7} ,  3
+/ \
+9  20
+/  \
+15   7   return its level order traversal as:  [
+[3],
+[9,20],
+[15,7]
+]   confused what "{1,#,2,3}" means? > read more on how binary tree is
+serialized on OJ.  OJ's Binary Tree Serialization:  The serialization of a
+binary tree follows a level order traversal, where '#' signifies a path
+terminator where no node exists below.  Here's an example:  1
+/ \
+2   3
+/
+4
+\
+5 The above binary tree is serialized as "{1,2,3,#,#,4,#,#,5}" .    Subscribe to
+see which companies asked this question    Show Tags   Tree  Breadth-first
+Search     Show Similar Problems   (M) Binary Tree Zigzag Level Order Traversal
+(E) Binary Tree Level Order Traversal II  (E) Minimum Depth of Binary Tree  (M)
+Binary Tree Vertical Order Traversal
+
+******************************number-of-islands
+ Given a 2d grid map of '1' s (land) and '0' s (water), count the number of
+islands. An island is surrounded by water and is formed by connecting adjacent
+lands horizontally or vertically. You may assume all four edges of the grid are
+all surrounded by water.  Example 1:  11110 11010 11000 00000  Answer: 1
+Example 2:  11000 11000 00100 00011  Answer: 3  Credits: Special thanks to
+@mithmatt for adding this problem and creating all test cases.   Subscribe to
+see which companies asked this question    Show Tags   Depth-first Search
+Breadth-first Search  Union Find     Show Similar Problems   (M) Surrounded
+Regions  (M) Walls and Gates  (H) Number of Islands II  (M) Number of Connected
+Components in an Undirected Graph
+
+******************************word-ladder-ii
+ Given two words ( beginWord and endWord ), and a dictionary's word list, find
+all shortest transformation sequence(s) from beginWord to endWord , such that:
+Only one letter can be changed at a time  Each intermediate word must exist in
+the word list   For example,  Given:  beginWord = "hit"  endWord = "cog"
+wordList = ["hot","dot","dog","lot","log"]   Return  [
+["hit","hot","dot","dog","cog"],
+["hit","hot","lot","log","cog"]
+]    Note:   All words have the same length.  All words contain only lowercase
+alphabetic characters.     Subscribe to see which companies asked this question
+Show Tags   Array  Backtracking  Breadth-first Search  String
+
+******************************perfect-squares
+ Given a positive integer n , find the least number of perfect square numbers
+(for example, 1, 4, 9, 16, ... ) which sum to n .  For example, given n = 12 ,
+return 3 because 12 = 4 + 4 + 4 ; given n = 13 , return 2 because 13 = 4 + 9 .
+Credits: Special thanks to @jianchao.li.fighter for adding this problem and
+creating all test cases.   Subscribe to see which companies asked this question
+Show Tags   Dynamic Programming  Breadth-first Search  Math     Show Similar
+Problems   (E) Count Primes  (M) Ugly Number II
+
+******************************course-schedule
+ There are a total of n courses you have to take, labeled from 0 to n - 1 .
+Some courses may have prerequisites, for example to take course 0 you have to
+first take course 1, which is expressed as a pair: [0,1]  Given the total number
+of courses and a list of prerequisite pairs , is it possible for you to finish
+all courses?  For example:  2, [[1,0]]  There are a total of 2 courses to take.
+To take course 1 you should have finished course 0. So it is possible.  2,
+[[1,0],[0,1]]  There are a total of 2 courses to take. To take course 1 you
+should have finished course 0, and to take course 0 you should also have
+finished course 1. So it is impossible.  Note: The input prerequisites is a
+graph represented by a list of edges , not adjacency matrices. Read more about
+how a graph is represented .  click to show more hints.  Hints:   This problem
+is equivalent to finding if a cycle exists in a directed graph. If a cycle
+exists, no topological ordering exists and therefore it will be impossible to
+take all courses.  Topological Sort via DFS - A great video tutorial (21
+minutes) on Coursera explaining the basic concepts of Topological Sort.
+Topological sort could also be done via BFS .     Subscribe to see which
+companies asked this question    Show Tags   Depth-first Search  Breadth-first
+Search  Graph  Topological Sort     Show Similar Problems   (M) Course Schedule
+II  (M) Graph Valid Tree  (M) Minimum Height Trees
+
+******************************binary-tree-level-order-traversal-ii
+ Given a binary tree, return the bottom-up level order traversal of its nodes'
+values. (ie, from left to right, level by level from leaf to root).  For
+example: Given binary tree {3,9,20,#,#,15,7} ,  3
+/ \
+9  20
+/  \
+15   7   return its bottom-up level order traversal as:  [
+[15,7],
+[9,20],
+[3]
+]   confused what "{1,#,2,3}" means? > read more on how binary tree is
+serialized on OJ.  OJ's Binary Tree Serialization:  The serialization of a
+binary tree follows a level order traversal, where '#' signifies a path
+terminator where no node exists below.  Here's an example:  1
+/ \
+2   3
+/
+4
+\
+5 The above binary tree is serialized as "{1,2,3,#,#,4,#,#,5}" .    Subscribe to
+see which companies asked this question    Show Tags   Tree  Breadth-first
+Search     Show Similar Problems   (E) Binary Tree Level Order Traversal
+
+******************************course-schedule-ii
+ There are a total of n courses you have to take, labeled from 0 to n - 1 .
+Some courses may have prerequisites, for example to take course 0 you have to
+first take course 1, which is expressed as a pair: [0,1]  Given the total number
+of courses and a list of prerequisite pairs , return the ordering of courses you
+should take to finish all courses.  There may be multiple correct orders, you
+just need to return one of them. If it is impossible to finish all courses,
+return an empty array.  For example:  2, [[1,0]]  There are a total of 2 courses
+to take. To take course 1 you should have finished course 0. So the correct
+course order is [0,1]  4, [[1,0],[2,0],[3,1],[3,2]]  There are a total of 4
+courses to take. To take course 3 you should have finished both courses 1 and 2.
+Both courses 1 and 2 should be taken after you finished course 0. So one correct
+course order is [0,1,2,3] . Another correct ordering is [0,2,1,3] .  Note: The
+input prerequisites is a graph represented by a list of edges , not adjacency
+matrices. Read more about how a graph is represented .  click to show more
+hints.  Hints:   This problem is equivalent to finding the topological order in
+a directed graph. If a cycle exists, no topological ordering exists and
+therefore it will be impossible to take all courses.  Topological Sort via DFS -
+A great video tutorial (21 minutes) on Coursera explaining the basic concepts of
+Topological Sort.  Topological sort could also be done via BFS .     Subscribe
+to see which companies asked this question    Show Tags   Depth-first Search
+Breadth-first Search  Graph  Topological Sort     Show Similar Problems   (M)
+Course Schedule  (H) Alien Dictionary  (M) Minimum Height Trees
+
+******************************minimum-depth-of-binary-tree
+ Given a binary tree, find its minimum depth.  The minimum depth is the number
+of nodes along the shortest path from the root node down to the nearest leaf
+node.   Subscribe to see which companies asked this question    Show Tags   Tree
+Depth-first Search  Breadth-first Search     Show Similar Problems   (E) Binary
+Tree Level Order Traversal  (E) Maximum Depth of Binary Tree
+
+******************************surrounded-regions
+ Given a 2D board containing 'X' and 'O' , capture all regions surrounded by 'X'
+.  A region is captured by flipping all 'O' s into 'X' s in that surrounded
+region.  For example,  X X X X
+X O O X
+X X O X
+X O X X   After running your function, the board should be: X X X X
+X X X X
+X X X X
+X O X X    Subscribe to see which companies asked this question    Show Tags
+Breadth-first Search  Union Find     Show Similar Problems   (M) Number of
+Islands  (M) Walls and Gates
+
+******************************minimum-height-trees
+ For a undirected graph with tree characteristics, we can choose any node as the
+root. The result graph is then a rooted tree. Among all possible rooted trees,
+those with minimum height are called minimum height trees (MHTs).
+Given such a graph, write a function to find all the MHTs and return a list of
+their root labels.   Format The graph contains n nodes which are labeled from 0
+to n - 1 .
+You will be given the number n and a list of undirected edges (each edge is a
+pair of labels).  You can assume that no duplicate edges will appear in edges .
+Since all edges are
+undirected, [0, 1] is the same as [1, 0] and thus will not appear together in
+edges .   Example 1:   Given n = 4 , edges = [[1, 0], [1, 2], [1, 3]]   0
+
+1
+/ \
+2   3  return [1]    Example 2:   Given n = 6 , edges = [[0, 3], [1, 3], [2, 3],
+[4, 3], [5, 4]]   0  1  2
+\
+/
+3
+
+4
+
+5  return [3, 4]    How many MHTs can a graph have at most?    Note :  (1)
+According to the definition
+of tree on Wikipedia : “a tree is an undirected graph in which any two vertices
+are connected by exactly one path. In other words, any connected graph without
+simple cycles is a tree.”  (2) The height of a rooted tree is the number of
+edges on the longest downward path between the root and a
+leaf.  Credits: Special thanks to @dietpepsi for adding this problem and
+creating all test cases.   Subscribe to see which companies asked this question
+Show Tags   Breadth-first Search  Graph     Show Similar Problems   (M) Course
+Schedule  (M) Course Schedule II
+
+******************************clone-graph
+ Clone an undirected graph. Each node in the graph contains a label and a list
+of its neighbors .    OJ's undirected graph serialization:  Nodes are labeled
+uniquely. We use # as a separator for each node, and , as a separator for node
+label and each neighbor of the node.  As an example, consider the serialized
+graph { 0 ,1,2# 1 ,2# 2 ,2} .  The graph has a total of three nodes, and
+therefore contains three parts as separated by # .  First node is labeled as 0 .
+Connect node 0 to both nodes 1 and 2 .  Second node is labeled as 1 . Connect
+node 1 to node 2 .  Third node is labeled as 2 . Connect node 2 to node 2
+(itself), thus forming a self-cycle.    Visually, the graph looks like the
+following: 1
+/ \
+/   \
+0 --- 2
+/ \
+\_/     Subscribe to see which companies asked this question    Show Tags
+Depth-first Search  Breadth-first Search  Graph     Show Similar Problems   (H)
+Copy List with Random Pointer
+
+******************************binary-tree-right-side-view
+ Given a binary tree, imagine yourself standing on the right side of it, return
+the values of the nodes you can see ordered from top to bottom.  For example:
+Given the following binary tree,  1            <---
+/   \
+2     3         <---
+\     \
+5     4       <---   You should return [1, 3, 4] .  Credits: Special thanks to
+@amrsaqr for adding this problem and creating all test cases.   Subscribe to see
+which companies asked this question    Show Tags   Tree  Depth-first Search
+Breadth-first Search     Show Similar Problems   (M) Populating Next Right
+Pointers in Each Node
+
+******************************binary-tree-zigzag-level-order-traversal
+ Given a binary tree, return the zigzag level order traversal of its nodes'
+values. (ie, from left to right, then right to left for the next level and
+alternate between).  For example: Given binary tree {3,9,20,#,#,15,7} ,  3
+/ \
+9  20
+/  \
+15   7   return its zigzag level order traversal as:  [
+[3],
+[20,9],
+[15,7]
+]   confused what "{1,#,2,3}" means? > read more on how binary tree is
+serialized on OJ.  OJ's Binary Tree Serialization:  The serialization of a
+binary tree follows a level order traversal, where '#' signifies a path
+terminator where no node exists below.  Here's an example:  1
+/ \
+2   3
+/
+4
+\
+5 The above binary tree is serialized as "{1,2,3,#,#,4,#,#,5}" .    Subscribe to
+see which companies asked this question    Show Tags   Tree  Breadth-first
+Search  Stack     Show Similar Problems   (E) Binary Tree Level Order Traversal
+

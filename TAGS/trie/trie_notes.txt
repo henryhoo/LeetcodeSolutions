@@ -1,0 +1,57 @@
+******************************implement-trie-prefix-tree
+ Implement a trie with insert , search , and startsWith methods.   Note: You may
+assume that all inputs are consist of lowercase letters a-z .   Subscribe to see
+which companies asked this question    Show Tags   Design  Trie     Show Similar
+Problems   (M) Add and Search Word - Data structure design
+
+******************************palindrome-pairs
+ Given a list of unique words. Find all pairs of distinct indices (i, j) in the
+given list, so that the concatenation of the two words, i.e. words[i] + words[j]
+is a palindrome.   Example 1: Given words = ["bat", "tab", "cat"] Return [[0,
+1], [1, 0]] The palindromes are ["battab", "tabbat"]    Example 2: Given words =
+["abcd", "dcba", "lls", "s", "sssll"] Return [[0, 1], [1, 0], [3, 2], [2, 4]]
+The palindromes are ["dcbaabcd", "abcddcba", "slls", "llssssll"]   Credits:
+Special thanks to @dietpepsi for adding this problem and creating all test
+cases.   Subscribe to see which companies asked this question    Show Tags
+Hash Table  String  Trie     Show Similar Problems   (M) Longest Palindromic
+Substring  (H) Shortest Palindrome
+
+******************************word-search-ii
+ Given a 2D board and a list of words from the dictionary, find all words in the
+board.  Each word must be constructed from letters of sequentially adjacent
+cell, where "adjacent" cells are those horizontally or vertically neighboring.
+The same letter cell may not be used more than once in a word.  For example,
+Given words = ["oath","pea","eat","rain"] and board = [
+[' o ',' a ','a','n'],
+['e',' t ',' a ',' e '],
+['i',' h ','k','r'],
+['i','f','l','v']
+] Return ["eat","oath"] .   Note: You may assume that all inputs are consist of
+lowercase letters a-z .  click to show hint.  You would need to optimize your
+backtracking to pass the larger test. Could you stop backtracking earlier?  If
+the current candidate does not exist in all words' prefix, you could stop
+backtracking immediately. What kind of data structure could answer such query
+efficiently? Does a hash table work? Why or why not? How about a Trie? If you
+would like to learn how to implement a basic trie, please work on this problem:
+Implement Trie (Prefix Tree) first.    Subscribe to see which companies asked
+this question    Show Tags   Backtracking  Trie     Show Similar Problems   (M)
+Word Search
+
+******************************add-and-search-word-data-structure-design
+ Design a data structure that supports the following two operations:  void
+addWord(word)
+bool search(word)  search(word) can search a literal word or a regular
+expression string containing only letters a-z or . . A . means it can represent
+any one letter.  For example:  addWord("bad")
+addWord("dad")
+addWord("mad")
+search("pad") -> false
+search("bad") -> true
+search(".ad") -> true
+search("b..") -> true   Note: You may assume that all words are consist of
+lowercase letters a-z .  click to show hint.  You should be familiar with how a
+Trie works. If not, please work on this problem: Implement Trie (Prefix Tree)
+first.   Subscribe to see which companies asked this question    Show Tags
+Backtracking  Trie  Design     Show Similar Problems   (M) Implement Trie
+(Prefix Tree)
+

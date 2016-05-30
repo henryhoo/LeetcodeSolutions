@@ -1,0 +1,8 @@
+/*
+ Divide two integers without using multiplication, division and mod operator.
+If it is overflow, return MAX_INT.   Subscribe to see which companies asked this
+question    Show Tags   Math  Binary Search
+*/
+
+
+public class Solution {    public int divide(int dividend, int divisor) {        //overflow case        if(divisor == 0 ) return Integer.MAX_VALUE;        if ((divisor == Integer.MIN_VALUE)) return divisor==dividend?1:0;//important:deal with math.abs() overflow        if(dividend == Integer.MIN_VALUE && Math.abs(divisor)==1)            return divisor == 1?Integer.MIN_VALUE:Integer.MAX_VALUE;//important:deal with math.abs() overflow        //init parameters        int sign = (dividend ^ divisor) >>> 31;        int digit = 0, multiple = 0;        divisor = Math.abs(divisor);        if(dividend==Integer.MIN_VALUE){//important:deal with math.abs() overflow            multiple = 1;            dividend += divisor;        }        dividend = Math.abs(dividend);        //find out the max k for 2^k*divisor<dividend        while(divisor<=(dividend>>1)){            divisor <<= 1;            digit++;        }        //caculate the multiple with o(logn) complexity        while(digit>=0){            int num = 0;            while(dividend >= divisor){                dividend -= divisor;                num++;            }            multiple += (num<<digit);            divisor >>= 1;            digit--;        }        return sign==1?-multiple:multiple;    }}
