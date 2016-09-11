@@ -10,9 +10,23 @@ cases.   Subscribe to see which companies asked this question    Show Tags   Bit
 Manipulation     Show Similar Problems   (M) Single Number  (M) Single Number II
 */
 
-
-public class Solution {
-    public int[] singleNumber(int[] nums) {
-        
-    }
+public class Solution {
+    public int[] singleNumber(int[] nums) {
+        //find out two result's xor
+        int mask = 0;
+        for (int n: nums) {
+            mask ^= n;
+        }
+        //base on one bit of xor result, partition nums into two group and do xor seperately
+        mask = Integer.highestOneBit(mask);
+        int res1 = 0, res2 = 0;
+        for (int n: nums) {
+            if ((mask & n) == 0) {
+                res1 ^= n;
+            } else {
+                res2 ^= n;
+            }
+        }
+        return (new int []{res1, res2});
+    }
 }
