@@ -1,3 +1,0 @@
-1. Using String.split can save a lot of time in condition judge.
-2. List<String> list = new ArrayList(stack) can reverse a stack's data.(break output's FILO but keep insert's FILO).
-3. String.join is a good way to insert seperator.(see in simplifiedstringsplit)
