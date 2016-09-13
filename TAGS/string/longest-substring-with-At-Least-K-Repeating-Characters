@@ -1,0 +1,46 @@
+c class Solution {
+    private char[] c;
+    private int bound; //bound = k
+    private int max = 0;//record for max length
+    
+    public int longestSubstring(String s, int k) {
+        bound = k;
+        c = s.toCharArray();
+        return longest(0, c.length-1);
+    }
+    private int longest(int start, int end) {
+        if (end-start+1<bound) return 0;
+        //find out each character's frequency
+        HashMap <Character, List<Integer>> counts = new HashMap<Character,List<Integer>>();
+        for (int i=start; i<=end; i++) {
+            if (!counts.containsKey(c[i])) {
+                List<Integer> list = new ArrayList<Integer>();
+                counts.put(c[i], list);
+            }
+            counts.get(c[i]).add(i);
+        }
+        //find out all character's position that frequency is less than k
+        List<Integer> less = new ArrayList<Integer>();
+        for(char key : counts.keySet()) {
+            if (counts.get(key).size() < bound) {
+                less.addAll(counts.get(key));
+            }
+        }
+        //current substring is qualified
+        if (less.size() == 0) {
+            return end-start+1;
+        }
+        //recursive into substrings
+        Collections.sort(less);
+        less.add(end+1);
+        int index = 0;
+        int temp = 0;
+        for (int i = start-1; i < end; ) {
+            temp = less.get(index++);
+            max = Math.max(max, longest(i+1, temp-1));
+            i = temp;
+        }
+        return max;
+        
+    }
+}
