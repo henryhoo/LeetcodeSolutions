@@ -10,8 +10,4 @@ Distinct Characters
 */
 
 
-public class Solution {
-    public int lengthOfLongestSubstring(String s) {
-        
-    }
-}
+public class Solution {    public int lengthOfLongestSubstring(String s) {        int max = 0;        HashSet<Character> set = new HashSet<Character>();        for (int i = 0, j = 0; i < s.length(); ++i) {            if(set.contains(s.charAt(i))) {                while(s.charAt(j) != s.charAt(i)) {                    set.remove(s.charAt(j));                    j++;                }                j++;            } else {                set.add(s.charAt(i));                max = Math.max(max,i-j+1);            }        }        return max;    }}//beeter solution from leetcodepublic int lengthOfLongestSubstring(String s) {     if (s.length()==0) return 0;     HashMap<Character, Integer> map = new HashMap<Character, Integer>();     int max=0;     for (int i=0, j=0; i<s.length(); ++i){         if (map.containsKey(s.charAt(i))){             j = Math.max(j,map.get(s.charAt(i))+1);         }         map.put(s.charAt(i),i);         max = Math.max(max,i-j+1);     }     return max; }
