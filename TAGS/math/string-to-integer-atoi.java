@@ -24,8 +24,4 @@ Reverse Integer  (H) Valid Number
 */
 
 
-public class Solution {
-    public int myAtoi(String str) {
-        
-    }
-}
+public class Solution {    public int myAtoi(String str) {        if (str.length() == 0) return 0;        int result = 0;        int flag = 1;        int p = 0;        //remove space        str = str.trim();        //decide sign        char[] strc= str.toCharArray();        if (strc[0] == '-' || strc[0] == '+') {            flag = strc[0] == '-' ? -1 : 1;            p++;        }        //read each digit and add to result        while (p < strc.length) {            int digit = strc[p] - '0';            //digit is not number            if (digit < 0 || digit > 10) break;            digit *= flag;            if (Integer.MAX_VALUE / 10 < result || (Integer.MAX_VALUE / 10 == result && Integer.MAX_VALUE - digit < result * 10) || Integer.MIN_VALUE / 10 > result || (Integer.MIN_VALUE / 10 == result && Integer.MIN_VALUE - digit > result * 10))                return flag == 1 ? Integer.MAX_VALUE : Integer.MIN_VALUE;            int newresult = result * 10 + digit;            //Integer overflow            // System.out.print(result + " " + newresult + "\n");            result = newresult;            p++;        }        return result;    }}

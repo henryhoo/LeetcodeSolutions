@@ -11,10 +11,16 @@ overflows.   Update (2014-11-10): Test cases had been added to test the overflow
 behavior.    Subscribe to see which companies asked this question    Show Tags
 Math     Show Similar Problems   (E) String to Integer (atoi)
 */
-
-
-public class Solution {
-    public int reverse(int x) {
-        
-    }
+c class Solution {
+    public int reverse(int x) {
+        long result = 0;
+        while (x != 0) {
+            int dig = x%10;
+            result = result*10 + dig; 
+            x = x/10;
+        }
+        if (result > Integer.MAX_VALUE || result < Integer.MIN_VALUE) return 0;
+        return (int)result;
+    }
 }
+
