@@ -20,8 +20,4 @@ first Search     Show Similar Problems   (M) Path Sum II
  *     TreeNode(int x) { val = x; }
  * }
  */
-public class Solution {
-    public List<String> binaryTreePaths(TreeNode root) {
-        
-    }
-}
+ /**  * Definition for a binary tree node.  * public class TreeNode {  *     int val;  *     TreeNode left;  *     TreeNode right;  *     TreeNode(int x) { val = x; }  * }  */ public class Solution {     List<String> res = new ArrayList<String>();     public List<String> binaryTreePaths(TreeNode root) {         if (root == null) return res;         travel(root, "");         return res;     }     private void travel(TreeNode root, String path) {         if (root.left == null && root.right == null) {             res.add(path + root.val);         }         if (root.left != null) {             travel(root.left, path + root.val + "->");         }         if (root.right != null) {             travel(root.right, path + root.val + "->");         }     } }
