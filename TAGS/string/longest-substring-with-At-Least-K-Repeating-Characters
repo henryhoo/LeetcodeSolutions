@@ -1,8 +1,8 @@
-c class Solution {
+public class Solution {
     private char[] c;
     private int bound; //bound = k
     private int max = 0;//record for max length
-    
+
     public int longestSubstring(String s, int k) {
         bound = k;
         c = s.toCharArray();
