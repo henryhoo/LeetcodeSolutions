@@ -23,18 +23,35 @@ see which companies asked this question    Show Tags   Tree  Breadth-first
 Search     Show Similar Problems   (E) Binary Tree Level Order Traversal
 */
 
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+        List<List<Integer>> res = new LinkedList<List<Integer>>();
+        if(root == null) return res;
+        Queue<TreeNode> q = new LinkedList<TreeNode>();
+        q.offer(root);
 
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
-public class Solution {
-    public List<List<Integer>> levelOrderBottom(TreeNode root) {
-        
-    }
+        while (q.size()>0) {
+                List<Integer> list = new LinkedList<Integer>();
+                int m = q.size();
+                //interate each level's element, add child if it is not null
+                for (int i = 0; i < m; i++) {
+                    TreeNode t = q.poll();
+                    list.add(t.val);
+                    if (t.left != null) q.offer(t.left);
+                    if (t.right != null) q.offer(t.right);
+                }
+                //add to res
+                res.add(0, new LinkedList(list));
+        }
+    return res;
+    }
 }
