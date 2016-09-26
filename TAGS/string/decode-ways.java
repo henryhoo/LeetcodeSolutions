@@ -11,8 +11,4 @@ Dynamic Programming  String
 */
 
 
-public class Solution {
-    public int numDecodings(String s) {
-        
-    }
-}
+public class Solution {    public int numDecodings(String s) {        char[] c = s.toCharArray();        int r2 = 1, r1 = 1;        for (int i = 1; i < c.length(); i++) {            if (c[i] == '0') r1 = 0;            else if (c[i-1] == '1' || (c[i-1] == '2' && c[i] <= '6')) {                int t = r1;                r1 = r1 + r2;                r2 = t;            }            else {                r2 = r1;            }        }        return r1;    }}
