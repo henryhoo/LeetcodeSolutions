@@ -27,8 +27,4 @@ Robber II
  *     TreeNode(int x) { val = x; }
  * }
  */
-public class Solution {
-    public int rob(TreeNode root) {
-        
-    }
-}
+ /**  * Definition for a binary tree node.  * public class TreeNode {  *     int val;  *     TreeNode left;  *     TreeNode right;  *     TreeNode(int x) { val = x; }  * }  */ public class Solution {     public int rob(TreeNode root) {         int[] res = help(root);         return Math.max(res[0], res[1]);     }     private int[] help(TreeNode root) {         if (root==null) return new int[]{0,0};         int[] right = help(root.right);         int[] left = help(root.left);         int i = right[1] + left[1] + root.val;         int e = Math.max(right[1], right[0]) + Math.max(left[1], left[0]);         return new int[]{i, e};     } }
