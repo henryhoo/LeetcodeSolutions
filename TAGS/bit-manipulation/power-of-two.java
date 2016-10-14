@@ -7,8 +7,4 @@ Bits  (E) Power of Three  (E) Power of Four
 */
 
 
-public class Solution {
-    public boolean isPowerOfTwo(int n) {
-        
-    }
-}
+//solution 1:public boolean isPowerOfTwo(int n) {final double epsilon = 1.e-10;return (Math.log(n) / Math.log(2) + epsilon) % 1 <= 2 * epsilon;}//solution 2:public boolean isPowerOfTwo(int n) {return n > 0 && 1073741824 % n == 0;}//solution 3:public boolean isPowerOfTwo(int n) {return n>0 && Integer.toBinaryString(n).matches("^10*$");}

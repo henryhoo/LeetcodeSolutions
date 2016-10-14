@@ -11,6 +11,12 @@ of Two  (E) Power of Three
 
 public class Solution {
     public boolean isPowerOfFour(int num) {
-        
+      return ((num-1)&num)==0 && (num-1)%3==0;
     }
+}
+
+public class Solution {
+    public boolean isPowerOfFour(int num) {
+        return Integer.toString(num,4).matches("10*");
+    }
 }
