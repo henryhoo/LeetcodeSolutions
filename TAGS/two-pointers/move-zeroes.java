@@ -10,8 +10,4 @@ Pointers     Show Similar Problems   (E) Remove Element
 */
 
 
-public class Solution {
-    public void moveZeroes(int[] nums) {
-        
-    }
-}
+public class Solution {    public void moveZeroes(int[] nums) {        int last = 0;        for (int i = 0; i < nums.length; i++) {            if (nums[i] != 0) {                last++;                if (last - 1 != i) {                    int temp = nums[i];                    nums[i] = nums[last - 1];                    nums[last - 1] = temp;                }            }        }    }}

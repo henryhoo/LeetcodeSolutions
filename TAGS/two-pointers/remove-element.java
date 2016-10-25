@@ -13,8 +13,4 @@ Zeroes
 */
 
 
-public class Solution {
-    public int removeElement(int[] nums, int val) {
-        
-    }
-}
+public class Solution {    public int removeElement(int[] nums, int val) {        int tail = nums.length - 1;        int i = 0;        while (i <= tail) {            if (nums[i] == val) {                int temp = nums[tail];                nums[tail] = nums[i];                nums[i] = temp;                tail--;            } else {                i++;            }        }        return tail + 1;    }}
