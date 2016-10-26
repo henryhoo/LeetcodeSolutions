@@ -14,8 +14,4 @@ Backtracking
 */
 
 
-public class Solution {
-    public List<List<Integer>> subsetsWithDup(int[] nums) {
-        
-    }
-}
+public class Solution {    List<List<Integer>> res = new ArrayList<>();    int[] n;    public List<List<Integer>> subsetsWithDup(int[] nums) {        Arrays.sort(nums);        n = nums;        backtrack(new ArrayList<>(), 0);        return res;    }    private void backtrack(List<Integer> list, int start) {        res.add(new ArrayList<>(list));        for (int i = start; i < n.length; i++) {            if (i > start && n[i] == n[i-1]) continue;            list.add(n[i]);            backtrack(list, i+1);            list.remove(list.size() - 1);        }    }}

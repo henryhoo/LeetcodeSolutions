@@ -12,8 +12,4 @@ question    Show Tags   String
 */
 
 
-public class Solution {
-    public int compareVersion(String version1, String version2) {
-        
-    }
-}
+public class Solution {    public int compareVersion(String version1, String version2) {        String[] v1 = version1.split("\\.");        String[] v2 = version2.split("\\.");        int n = Math.min(v1.length, v2.length);        int i = 0;        for (i = 0; i < n; i++) {            if (Float.parseFloat(v1[i]) > Float.parseFloat(v2[i])) return 1;            else if (Float.parseFloat(v1[i]) < Float.parseFloat(v2[i])) return -1;        }        if (v1.length > v2.length) {            for (i = n; i < v1.length; i++) {                if (Float.parseFloat(v1[i]) > 0) return 1;            }        } else {            for (i = n; i < v2.length; i++) {                if (Float.parseFloat(v2[i]) > 0) return -1;            }        }        return 0;    }}

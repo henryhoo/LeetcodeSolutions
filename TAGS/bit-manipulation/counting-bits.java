@@ -16,8 +16,4 @@ Manipulation     Show Similar Problems   (E) Number of 1 Bits
 */
 
 
-public class Solution {
-    public int[] countBits(int num) {
-        
-    }
-}
+public class Solution {    public int[] countBits(int num) {        int[] res = new int[num+1];        res[0] = 0;        for (int i = 1; i <= num; i++) {            res[i] = 1 + res[i & i-1];        }        return res;    }}
