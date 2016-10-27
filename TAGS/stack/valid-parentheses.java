@@ -8,8 +8,4 @@ Parentheses  (H) Remove Invalid Parentheses
 */
 
 
-public class Solution {
-    public boolean isValid(String s) {
-        
-    }
-}
+public class Solution {    public boolean isValid(String s) {        Stack<Character> stack = new Stack<>();        char[] c = s.toCharArray();        for(char cc : c) {            if (cc == '(' || cc == '{' || cc == '[') {                stack.push(cc);            } else if (cc == ')' || cc == '}' || cc == ']') {                if (stack.isEmpty()) return false;                char pop = stack.pop();                switch(cc){                    case ')':                        if (pop != '(') return false;                        break;                    case '}':                        if (pop != '{') return false;                        break;                    case ']':                        if (pop != '[') return false;                        break;                }            } else {                return false;            }        }        return stack.isEmpty();    }}

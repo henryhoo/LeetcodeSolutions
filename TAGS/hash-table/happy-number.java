@@ -10,10 +10,20 @@ are happy numbers.  Example:&nbsp; 19 is a happy number   1 2 + 9 2 = 82  8 2 +
 Subscribe to see which companies asked this question    Show Tags   Hash Table
 Math     Show Similar Problems   (E) Add Digits  (E) Ugly Number
 */
-
-
-public class Solution {
-    public boolean isHappy(int n) {
-        
-    }
+public class Solution {
+    public boolean isHappy(int n) {
+        HashSet<Integer> set = new HashSet<>();
+        while (n != 1) {
+            set.add(n);
+            int sum = 0;
+            while (n > 0) {
+                int d = n%10;
+                n /= 10;
+                sum += d*d;
+            }
+            if (set.contains(sum)) return false;
+            n = sum;
+        }
+        return true;
+    }
 }
