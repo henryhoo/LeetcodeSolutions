@@ -40,7 +40,8 @@ public class Solution {
     }
 }
 
-//2ND TIME Solutionpublic class Solution {
+//2ND TIME Solution
+public class Solution {
     public boolean isPalindrome(ListNode head) {
         if(head==null||head.next==null)return true;
         ListNode fast = head, slow = head, pre = null, temp = null;
@@ -57,6 +58,39 @@ public class Solution {
             if(temp.val!=slow.val)return false;
             temp = temp.next;
             slow = slow.next;
+        }
+        return true;
+    }
+}
+
+//3rd time
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    public boolean isPalindrome(ListNode head) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode fast = dummy, slow = dummy;
+        ListNode prev = null;
+        ListNode next = null;
+        while (fast != null && fast.next != null && fast.next.next != null) {
+            ListNode t = slow.next;
+            next = slow.next.next;
+            slow.next = prev;
+            prev = slow;
+            slow = t;
+            fast = fast.next.next;
+        }
+        slow = fast.next == null ? slow : slow.next;
+        fast = next;
+        while (fast != null) {
+            if (fast.val != slow.val) return false;
         }
         return true;
     }

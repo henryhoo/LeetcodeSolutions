@@ -11,9 +11,13 @@ all test cases.   Subscribe to see which companies asked this question    Show
 Tags   Math     Show Similar Problems   (E) Excel Sheet Column Title
 */
 
-
-public class Solution {
-    public int titleToNumber(String s) {
-        
-    }
+public class Solution {
+    public int titleToNumber(String s) {
+        int res = 0;
+        int d = 0;
+        for (int i = s.length() - 1; i >= 0; i--) {
+            res += (1 + s.charAt(i) - 'A') * Math.pow(26, d++);
+        }
+        return res;
+    }
 }
