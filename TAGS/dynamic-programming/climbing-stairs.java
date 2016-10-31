@@ -5,9 +5,15 @@ the top?   Subscribe to see which companies asked this question    Show Tags
 Dynamic Programming
 */
 
-
-public class Solution {
-    public int climbStairs(int n) {
-        
-    }
+public class Solution {
+    public int climbStairs(int n) {
+        int s1 = 0, s2 = 1;
+        while (n > 0) {
+            int t = s2;
+            s2 += s1;
+            s1 = t;
+            n--;
+        }
+        return s2;
+    }
 }

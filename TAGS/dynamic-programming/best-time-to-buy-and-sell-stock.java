@@ -8,10 +8,14 @@ Subarray  (M) Best Time to Buy and Sell Stock II  (H) Best Time to Buy and Sell
 Stock III  (H) Best Time to Buy and Sell Stock IV  (M) Best Time to Buy and Sell
 Stock with Cooldown
 */
-
-
-public class Solution {
-    public int maxProfit(int[] prices) {
-        
-    }
+public class Solution {
+    public int maxProfit(int[] prices) {
+        int minSoFar = Integer.MAX_VALUE;
+        int res = 0;
+        for (int p : prices) {
+            if (minSoFar > p) minSoFar = p;
+            if (p - minSoFar > res) res = p - minSoFar;
+        }
+        return res;
+    }
 }
