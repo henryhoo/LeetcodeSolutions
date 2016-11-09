@@ -5,10 +5,13 @@ solution should be in logarithmic time complexity.  Credits: Special thanks to
 which companies asked this question    Show Tags   Math     Show Similar
 Problems   (H) Number of Digit One
 */
-
-
-public class Solution {
-    public int trailingZeroes(int n) {
-        
-    }
+public class Solution {
+    public int trailingZeroes(int n) {
+        int res = 0;
+        while(n>0){
+            res += n/5;
+            n/=5;
+        }
+        return res;
+    }
 }
