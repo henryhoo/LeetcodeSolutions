@@ -21,8 +21,4 @@ this question    Show Tags   Hash Table
 */
 
 
-public class Solution {
-    public String getHint(String secret, String guess) {
-        
-    }
-}
+import java.util.Hashtable;public class Solution {    public String getHint(String secret, String guess) {        int right = 0, wrong = 0;        HashMap<Character, Integer> st = new HashMap<>();        HashMap<Character, Integer> gt = new HashMap<>();        for(int i = 0; i < secret.length(); i++) {            if (secret.charAt(i) == guess.charAt(i)) right++;            else {                if (!st.containsKey(secret.charAt(i))) st.put(secret.charAt(i),1);                else st.put(secret.charAt(i),st.get(secret.charAt(i))+1);                if (!gt.containsKey(guess.charAt(i))) gt.put(guess.charAt(i),1);                else gt.put(guess.charAt(i),gt.get(guess.charAt(i))+1);            }        }            for (Character key : st.keySet()) {                // System.out.print(key+"\t");                if(gt.containsKey(key)){                    wrong += Math.min(st.get(key), gt.get(key));                }            }        return right+"A"+wrong+"B";    }}
