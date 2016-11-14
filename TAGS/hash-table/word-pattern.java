@@ -12,9 +12,5 @@ see which companies asked this question    Show Tags   Hash Table     Show
 Similar Problems   (E) Isomorphic Strings  (H) Word Pattern II
 */
 
-
-public class Solution {
-    public boolean wordPattern(String pattern, String str) {
-        
-    }
-}
+//1st
+public class Solution {    public boolean wordPattern(String pattern, String str) {        String[] s = str.split(" ");        HashMap<Character, String> map = new HashMap<Character, String>();        if (s.length != pattern.length())            return false;        for (int i = 0; i < s.length; i++) {            if (!map.containsKey(pattern.charAt(i))){                if (map.containsValue(s[i]))                    return false;                map.put(pattern.charAt(i), s[i]);            }            if (!map.get(pattern.charAt(i)).equals(s[i]))                return false;        }        return true;    }}

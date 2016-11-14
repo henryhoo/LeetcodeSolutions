@@ -8,8 +8,4 @@ Show Tags   String     Show Similar Problems   (M) Encode and Decode Strings
 */
 
 
-public class Solution {
-    public String countAndSay(int n) {
-        
-    }
-}
+public class Solution {    public String countAndSay(int n) {        StringBuilder sb = new StringBuilder("1");        for (int i = 2; i <= n; i++) {            StringBuilder t = new StringBuilder();            char c = sb.charAt(0);            int count = 1;            for (int j = 1; j < sb.length(); j++) {                if(sb.charAt(j) == c) count++;                else {                    t.append(count);                    t.append(c);                    c = sb.charAt(j);                    count = 1;                }            }            t.append(count);            t.append(c);            sb = new StringBuilder(t);        }        return sb.toString();    }}

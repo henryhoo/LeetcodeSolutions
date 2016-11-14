@@ -8,8 +8,4 @@ asked this question    Show Tags   Math
 */
 
 
-public class Solution {
-    public int computeArea(int A, int B, int C, int D, int E, int F, int G, int H) {
-        
-    }
-}
+public class Solution {    public int computeArea(int A, int B, int C, int D, int E, int F, int G, int H) {        int left = Math.max(A,E);        int right = Math.min(C,G);        int top = Math.min(D,H);        int bottom  = Math.max(B,F);        int overlap = right > left && top > bottom ? (right - left) * (top - bottom): 0;        return ((D-B) * (C-A) + (G-E) * (H-F) - overlap);    }}

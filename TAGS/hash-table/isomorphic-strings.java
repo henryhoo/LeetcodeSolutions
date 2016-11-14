@@ -24,3 +24,21 @@ public class Solution {
         return true;
     }
 }
+
+//2nd hashtable soultion
+public class Solution {
+    public boolean isIsomorphic(String s, String t) {
+        HashMap<Character, Character> m1 = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            if (!m1.containsKey(s.charAt(i))) {
+                if (m1.containsValue(t.charAt(i)))
+                    return false;
+                m1.put(s.charAt(i), t.charAt(i));
+            } else {
+            if (m1.get(s.charAt(i)) != t.charAt(i))
+                return false;
+            }
+        }
+        return true;
+    }
+}
