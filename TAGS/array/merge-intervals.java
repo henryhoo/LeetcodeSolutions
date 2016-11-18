@@ -15,8 +15,4 @@ Similar Problems   (H) Insert Interval  (E) Meeting Rooms  (M) Meeting Rooms II
  *     Interval(int s, int e) { start = s; end = e; }
  * }
  */
-public class Solution {
-    public List<Interval> merge(List<Interval> intervals) {
-        
-    }
-}
+ public class Solution {     public List<Interval> merge(List<Interval> intervals) {         if (intervals.size() < 1) return new LinkedList<>();         Collections.sort(intervals, new Comparator<Interval>(){             public int compare(Interval o1, Interval o2){                 return o1.start - o2.start;             }         });         List<Interval> res = new LinkedList<>();         Interval prev = intervals.get(0);         for (Interval i : intervals) {             if (i.start > prev.end) {                 res.add(prev);                 prev = i;             } else {                 prev.start = Math.min(prev.start, i.start);                 prev.end = Math.max(prev.end, i.end);             }         }         res.add(prev);         return res;     } }

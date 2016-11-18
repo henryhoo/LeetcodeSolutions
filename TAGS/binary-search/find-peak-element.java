@@ -9,10 +9,19 @@ be in logarithmic complexity.   Credits: Special thanks to @ts for adding this
 problem and creating all test cases.   Subscribe to see which companies asked
 this question    Show Tags   Array  Binary Search
 */
-
-
-public class Solution {
-    public int findPeakElement(int[] nums) {
-        
-    }
+public class Solution {
+    public int findPeakElement(int[] nums) {
+        int high = nums.length - 1;
+        int low = 0;
+        while (low < high) {
+            int mid1 = (low + high) / 2;
+            int mid2 = mid1 + 1;
+            if (nums[mid1] > nums[mid2]) {
+                high = mid1;
+            } else {
+                low = mid2;
+            }
+        }
+        return low;
+    }
 }
