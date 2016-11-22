@@ -20,8 +20,4 @@ Verify Preorder Sequence in Binary Search Tree
  *     TreeNode(int x) { val = x; }
  * }
  */
-public class Solution {
-    public List<Integer> preorderTraversal(TreeNode root) {
-        
-    }
-}
+ public class Solution {     public List<Integer> preorderTraversal(TreeNode root) {         if (root == null)             return new LinkedList<>();         else {             List<Integer> res = new LinkedList<>();             res.add(root.val);             res.addAll(preorderTraversal(root.left));             res.addAll(preorderTraversal(root.right));             return res;         }     } }
