@@ -11,9 +11,14 @@ creating all test cases.   Subscribe to see which companies asked this question
 Show Tags   Math     Show Similar Problems   (E) Excel Sheet Column Number
 */
 
-
-public class Solution {
-    public String convertToTitle(int n) {
-        
-    }
+public class Solution {
+    public String convertToTitle(int n) {
+        StringBuilder sb = new StringBuilder();
+        while (n > 0) {
+            n--;
+            sb.insert(0, (char)('A' + n % 26));
+            n /= 26;
+        }
+        return sb.toString();
+    }
 }
