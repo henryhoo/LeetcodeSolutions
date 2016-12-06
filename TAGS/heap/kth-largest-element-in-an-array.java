@@ -9,8 +9,4 @@ Problems   (M) Wiggle Sort II  (M) Top K Frequent Elements
 */
 
 
-public class Solution {
-    public int findKthLargest(int[] nums, int k) {
-        
-    }
-}
+public class Solution {    public int findKthLargest(int[] nums, int k) {        final int N = nums.length;        Arrays.sort(nums);        return nums[N - k];    }}
