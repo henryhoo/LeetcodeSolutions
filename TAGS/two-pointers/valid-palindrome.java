@@ -8,9 +8,24 @@ palindrome.   Subscribe to see which companies asked this question    Show Tags
 Two Pointers  String     Show Similar Problems   (E) Palindrome Linked List
 */
 
-
-public class Solution {
-    public boolean isPalindrome(String s) {
-        
-    }
+public class Solution {
+    public boolean isPalindrome(String s) {
+        int i = 0, j = s.length() - 1;
+        char head, tail;
+        while (i < j) {
+            head = s.charAt(i);
+            tail = s.charAt(j);
+            if (!Character.isLetterOrDigit(head))
+                i++;
+            else if (!Character.isLetterOrDigit(tail))
+                j--;
+            else {
+                if (Character.toLowerCase(head) != Character.toLowerCase(tail))
+                    return false;
+                i++;
+                j--;
+            }
+        }
+        return true;
+    }
 }
