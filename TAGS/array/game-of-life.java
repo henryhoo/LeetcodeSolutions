@@ -22,8 +22,4 @@ Show Similar Problems   (M) Set Matrix Zeroes
 */
 
 
-public class Solution {
-    public void gameOfLife(int[][] board) {
-        
-    }
-}
+public class Solution {    public void gameOfLife(int[][] board) {        if (board == null || board.length == 0) return;        int m = board.length, n = board[0].length;        for (int i = 0; i < m; i++) {            for (int j = 0; j < n; j++) {                //count lives of each cell                int[] xs = {i-1, i, i+1};                int[] ys = {j-1, j, j+1};                int lives = 0;                for (int ii : xs) {                    if (ii >= 0 && ii < m) {                        for (int jj : ys) {                            if (jj >= 0 && jj < n && !(ii == i && jj == j)) {                                lives += board[ii][jj] & 1;                            }                        }                    }                }                // lives -= board[i][j] & 1;                // System.out.print(i+","+j+":"+lives+'\n');                // count next state                if (board[i][j] == 1 && lives >= 2 && lives <= 3)                    board[i][j] = 3;                if (board[i][j] == 0 && lives == 3)                    board[i][j] = 2;            }        }        //move next state to current        for (int i = 0; i < m; i++) {            for (int j = 0; j < n; j++) {                board[i][j] >>= 1;  // Get the 2nd state.            }        }    }}
