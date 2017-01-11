@@ -6,10 +6,34 @@ sentences.  For example, given  s = "catsanddog" ,  dict = ["cat", "cats",
 Subscribe to see which companies asked this question    Show Tags   Dynamic
 Programming  Backtracking
 */
+public class Solution {
+    List<String> res = new LinkedList<>();
+    public List<String> wordBreak(String s, List<String> wordDict) {
+        DFS(s, wordDict, 0, new LinkedList<>());
+        return res;
+    }
 
+    private void DFS (String s, List<String> wordDict, int index, List<String> curRes) {
+        for (String w : wordDict) {
+            int pos = index + w.length();
+            if (pos > s.length())
+                continue;
+            if (s.substring(index, pos).equals(w)) {
+                if (pos == s.length()) {
+                    curRes.add(curRes.size() == 0 ? w : (" " + w));
+                    StringBuilder sb = new StringBuilder();
+                    for (String ss : curRes) {
+                        sb.append(ss);
+                    }
+                    res.add(sb.toString());
+                }
+                else {
+                    curRes.add(curRes.size() == 0 ? w : (" " + w));
+                    DFS(s, wordDict, pos, curRes);
+                }
+                curRes.remove(curRes.size() - 1);
+            }
+        }
 
-public class Solution {
-    public List<String> wordBreak(String s, Set<String> wordDict) {
-        
-    }
+    }
 }
