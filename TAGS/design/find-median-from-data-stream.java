@@ -14,19 +14,29 @@ and creating all test cases.   Subscribe to see which companies asked this
 question    Show Tags   Heap  Design
 */
 
+public class MedianFinder {
+    PriorityQueue<Integer> maxheap = new PriorityQueue<Integer>();
+    PriorityQueue<Integer> minheap = new PriorityQueue<Integer>(Collections.reverseOrder());
+    // Adds a number into the data structure.
+    public void addNum(int num) {
+        maxheap.offer(num);
+        minheap.offer(maxheap.poll());
+        if(maxheap.size() < minheap.size()){
+            maxheap.offer(minheap.poll());
+        }
+    }
 
-class MedianFinder {
-
-    // Adds a number into the data structure.
-    public void addNum(int num) {
-        
-    }
-
-    // Returns the median of current data stream
-    public double findMedian() {
-        
-    }
-};
+    // Returns the median of current data stream
+    public double findMedian() {
+        return maxheap.size() == minheap.size() ? (maxheap.peek() + minheap.peek()) / 2.0 : maxheap.peek();
+    }
+};
+
+// Your MedianFinder object will be instantiated and called as such:
+// MedianFinder mf = new MedianFinder();
+// mf.addNum(1);
+// mf.findMedian();
+
 
 // Your MedianFinder object will be instantiated and called as such:
 // MedianFinder mf = new MedianFinder();
