@@ -9,9 +9,22 @@ Array  Stack  Two Pointers     Show Similar Problems   (M) Container With Most
 Water  (M) Product of Array Except Self
 */
 
-
-public class Solution {
-    public int trap(int[] height) {
-        
-    }
+public class Solution {
+    public int trap(int[] A) {
+        int i = 0;
+        int j = A.length-1;
+        int leftMax = 0;
+        int rightMax = 0;
+        int sum = 0;
+        while (i <= j) {
+            leftMax = Math.max(A[i], leftMax);
+            rightMax = Math.max(A[j], rightMax);
+            if (leftMax < rightMax) {
+                sum += (leftMax - A[i++]);
+            } else {
+                sum += (rightMax - A[j--]);
+            }
+        }
+        return sum;
+    }
 }

@@ -9,17 +9,4 @@ which companies asked this question    Show Tags   Design
 */
 
 
-public class LRUCache {
-    
-    public LRUCache(int capacity) {
-        
-    }
-    
-    public int get(int key) {
-        
-    }
-    
-    public void set(int key, int value) {
-        
-    }
-}
+import java.util.Hashtable;public class LRUCache {    private class Node {        int value;        int key;        Node prev;        Node next;    }    private void insertNode (Node temp) {        temp.next = head.next;        temp.prev = head;        head.next.prev = temp;        head.next = temp;    }    private void removeNode (Node temp) {        Node next = temp.next;        Node prev = temp.prev;        next.prev = prev;        prev.next = next;    }    private Node popNode () {        Node temp = tail.prev;        temp.prev.next = tail;        tail.prev = tail.prev.prev;        temp.next = null;        temp.prev = null;        return temp;    }    private Node head, tail;    private Hashtable<Integer, Node> cache = new Hashtable<>();    private int count = 0;    private int cap = 0;    public LRUCache(int capacity) {        this.cap = capacity;        this.count = 0;        head = new Node();        tail = new Node();        head.prev = null;        tail.next = null;        head.next = tail;        tail.prev = head;    }    public int get(int key) {        Node n = cache.get(key);        if (n == null)            return -1;        removeNode(n);        insertNode(n);        return n.value;    }    public void put(int key, int value) {        Node n = cache.get(key);        if (n == null) {            n = new Node();            n.key = key;            n.value = value;            cache.put(key, n);            insertNode(n);            count++;            if (count > cap) {                Node last = popNode();                cache.remove(last.key);                count--;            }        } else {            n.value = value;            removeNode(n);            insertNode(n);        }    }}/** * Your LRUCache object will be instantiated and called as such: * LRUCache obj = new LRUCache(capacity); * int param_1 = obj.get(key); * obj.put(key,value); */

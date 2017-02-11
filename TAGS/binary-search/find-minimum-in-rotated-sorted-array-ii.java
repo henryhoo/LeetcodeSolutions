@@ -9,8 +9,4 @@ Rotated Sorted Array
 */
 
 
-public class Solution {
-    public int findMin(int[] nums) {
-        
-    }
-}
+public class Solution {    public int findMin(int[] nums) {        int i = 0, j = nums.length - 1;        while (nums[i] == nums[j] && i < j)            j--;        while (i < j) {            if (nums[i] < nums[j])                return nums[i];            else {                int mid = (i + j) / 2;                if (nums[mid] >= nums[i]) {                    i = mid + 1;                } else {                    j = mid;                }            }        }        return nums[i];    }}public class Solution {    public int findMin(int[] nums) {        int i = 0, j = nums.length - 1;        while (i < j) {            if (nums[i] < nums[j])                return nums[i];            else {                int mid = (i + j) / 2;                if (nums[mid] > nums[i]) {                    i = mid + 1;                } else if (nums[mid] < nums[i]) {                    j = mid;                } else {                    if (nums[mid] == nums[j]) {                        i++;                        j--;                    } else {                        i = mid + 1;                    }                }            }        }        return nums[i];    }}
